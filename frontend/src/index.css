@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes appear {
+	0% {
+		transform: scale(0.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 250px;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    width: 250px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+:root {
+  --background-color: #FFFCF2;
+  --secondary-color: #151624;
+  --high-light-color: #00C49A;
+  --high-light-color2: #156064;
+  --button-color: #60B2E5;
+  --dark-border: #989898;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  background: rgb(21,22,36);
+  background: linear-gradient(137deg, rgba(21,22,36,1) 0%, rgba(17,47,73,1) 26%, rgba(21,96,100,1) 61%, rgba(0,196,154,1) 100%);
+  background-size: 300% 300%;
+	animation: gradient 15s ease infinite;
+}
+
+.navigation-bar {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(21, 22, 36, 0.5);
+  padding: 30px 0;
+}
+
+.nav-left-side .logo {
+  color: var(--high-light-color);
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.navigation-bar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-right-side {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navigation-bar ul li a{
+  padding: 20px;
+  color: white;
+  font-size: 1.1em;
+}
+
+.logout-btn {
+  background-color: transparent;
+  padding: 0 20px;
+  margin: 0;
+  border: none;
+  color: white;
+  font-size: 1.1em;
+  border: 2px solid transparent;
+}
+
+.navigation-bar ul li a:hover{
+  border-bottom: 2px solid var(--high-light-color2);
+}
+
+.logout-btn:hover {
+  color: rgb(255, 34, 34);
+  background-color: rgba(92, 92, 92, 0.324);
+  border-right: 2px solid red;
+  cursor: pointer;
+}
+
+
+
+.welcome-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.welcome-box h1 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: var(--background-color);
+  animation: appear 1s ease;
+}
+
+.welcome-box span {
+  color: var(--high-light-color);
+  font-size: 1.2em;
+}
+
+.not-active-message {
+  background-color: var(--secondary-color);
+  color: rgb(190, 13, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid var(--high-light-color);
+}
+
+.not-active-message a {
+  color: var(--background-color);
+  background-color: rgb(190, 13, 0);
+  border: 1px solid var(--background-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 20px;
+}
+
+.not-active-message a:hover {
+  cursor: pointer;
+  background-color: var(--background-color);
+  color: rgb(190, 13, 0);
+}
+
+.country-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.country-page h1 {
+  margin-bottom: 20px;
+  color: var(--background-color);
+}
+
+.country-page form {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+} 
+
+.country-page input {
+  width: 80%;
+  padding: 5px;
+  border: 2px solid var(--high-light-color);
+  border-radius: 10px;
+  font-size: 1.1em;
+  color: var(--high-light-color2);
+}
+
+.country-page button {
+  border: 1px solid var(--high-light-color2);
+  border-radius: 5px;
+  background-color: var(--button-color);
+  color: var(--background-color);
+  padding: 5px 10px;
+}
+
+.country-page button:hover {
+  cursor: pointer;
+  background-color: var(--high-light-color);
+}
+
+.country-page .instructions {
+  color: var(--high-light-color);
+  margin-top: 30px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--high-light-color);
+  border-radius: 10px;
+}
+
+.all-counries {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  gap: 20px;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.country-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  animation: appear 1s ease;
+  color: var(--background-color);
+}
+
+.country-card img {
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.country-information {
+  position: absolute;
+  background-color: rgba(21, 22, 36, 0.9);
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0%;
+  transition: .2s ease;
+}
+
+.country-card:hover 
+  .country-information {
+    opacity: 100%;
+    transition: .2s ease;
+}
+
+.country-information h3 {
+  color: var(--button-color);
+  margin: 5px 0;
+}
+
+.country-information b {
+  color: var(--high-light-color);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-form {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  padding: 50px;
+  margin-top: 50px;
+  border: 2px solid var(--high-light-color);
+  border-radius: 15px;
+  min-height: 50%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  animation: appear 1s ease;
+}
+
+.single-input {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.single-input input {
+  border-radius: 5px;
+  border: 2px solid var(--high-light-color);
+  font-size: 1em;
+  padding: 5px;
+  width: 60%;
+}
+
+.single-input label {
+  font-weight: bold;
+  color: var(--high-light-color);
+} 
+
+.auth-form button {
+  border: 1px solid var(--high-light-color2);
+  border-radius: 5px;
+  background-color: var(--button-color);
+  color: var(--background-color);
+  padding: 10px 15px;
+}
+
+.auth-form button:hover {
+  cursor: pointer;
+  background-color: var(--high-light-color);
+}
+
+.auth-form a {
+  color: var(--high-light-color);
+}
+
+.auth-message {
+  background-color: rgb(80, 252, 0);
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--background-color);
+  width: 60%;
+  text-align: center;
+  color: var(--background-color);
+}
+
+.auth-error {
+  background-color: rgb(252, 38, 0);
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--background-color);
+  width: 60%;
+  text-align: center;
+  color: var(--background-color);
+}
+
+.api-hub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  padding-top: 100px;
+  color: var(--background-color);
+  animation: appear 1s ease;
+}
+
+.api-action-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
+.user-keys {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-keys table {
+  width: 60%;
+}
+
+.user-keys th {
+  color: var(--background-color);
+}
+
+.user-keys table, .user-keys tr, .user-keys td, .user-keys th {
+  padding: 10px;
+  border: 2px solid var(--high-light-color);
+  border-collapse: collapse;
+  background-color: var(--secondary-color);
+  color: var(--high-light-color);
+}
+
+.user-keys td {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+}
+
+/* .api-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.api-card {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--high-light-color);
+  border-radius: 5px;
+  padding: 20px 10px;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.api-card a {
+  background-color: var(--button-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--high-light-color2);
+  color: var(--high-light-color2);
+}
+
+.api-card a:hover {
+  cursor: pointer;
+  border: 1px solid var(--high-light-color);
+  background-color: var(--high-light-color2);
+  color: var(--high-light-color);
+} */
+
+.message-popup {
+  position: fixed;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-left: 3px solid #00C49A;
+  top: 100px;
+  width: 250px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  right: 0;
+  animation: 
+    slideIn 1s ease, 
+    slideOut 1s 4s ease;
+}
+
+.api-hub button {
+  background-color: var(--button-color);
+  padding: 10px 15px;
+  color: var(--background-color);
+  border: 1px solid var(--high-light-color);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.api-hub button:hover {
+  background-color: var(--high-light-color2);
+  color: var(--high-light-color);
+  border: 1px solid var(--high-light-color);
+  cursor: pointer;
+}
+
+.deactivate-btn {
+  background-color: rgb(190, 13, 0) !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.deactivate-btn:hover {
+  background-color: white !important;
+  color: rgb(190, 13, 0) !important;
+  border: 1px solid rgb(190, 13, 0) !important;
+}
+
+.api-hub .no-keys {
+  display: flex;
+  justify-content: center;
+  color: var(--background-color);
+}
+
+.all-keys-table {
+  width: 60%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.all-keys-table table, .all-keys-table tr, .all-keys-table td, .all-keys-table th {
+  padding: 10px;
+  border: 2px solid var(--high-light-color);
+  background-color: var(--secondary-color);
+  color: var(--high-light-color);
+}
+
+.all-keys-table td {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid var(--high-light-color2);
+}
+
+.all-keys-table label {
+  color: var(--background-color);
+}
+
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--background-color);
+}
+
+.page-not-found a {
+  background-color: var(--button-color);
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--background-color);
+  margin-top: 20px;
+}
+
+.page-not-found a:hover {
+  background-color: var(--high-light-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
