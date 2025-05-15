@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const authRoute = require('./routes/authRoute')
 const userRoute = require('./routes/userRoute')
 const apiKeyRoute = require('./routes/apiKeyRoute')
+const postRoute = require('./routes/postRoute')
 const cors = require('cors')
 
 // INITIALIZE APP
@@ -29,6 +30,7 @@ app.use(cors({
 app.use('/auth', authRoute)
 app.use('/user', userRoute)
 app.use('/api', apiKeyRoute)
+app.use('/post', postRoute)
 
 // NOTE: DB CONNECTION
 mongoose.connect(process.env.DB_CONNECTION)

@@ -15,27 +15,22 @@ const NavigationBar = ({ role }) => {
             <ul>
                 <div className="nav-left-side">
                     <li>
-                        <Link to='/' className="logo">CountryCatalogue</Link>
+                        <Link to='/' className="logo">
+                            <img src="/TravelTalesLogo.png" alt="TravelTales"></img>
+                        </Link>
                     </li>
                 </div>
                 <div className="nav-right-side">
                     <li>
                         <Link to='/'>Home</Link>
                     </li>
+                    <li>
+                        <Link to='/posts'>Search</Link>
+                    </li>   
                     {/* CONDITIONAL MENU POINTS */}
-                    {user &&
+                    {user && 
                         <li>
-                            <Link to='/countries'>Countries</Link>
-                        </li>
-                    }
-                    {user &&
-                        <li>
-                            <Link to='/api'>API keys</Link>
-                        </li>
-                    }
-                    {user && role && role === 'admin' &&
-                        <li>
-                            <Link to='/manage-keys'>Manage keys</Link>
+                            <Link to='/my-profile'>My Profile</Link>
                         </li>
                     }
                     {user &&
@@ -45,7 +40,7 @@ const NavigationBar = ({ role }) => {
                     }
                     {!user &&
                         <li>
-                            <Link to='/login'>Login</Link>
+                            <Link to='/login'>Login/Register</Link>
                         </li>
                     }
                 </div>

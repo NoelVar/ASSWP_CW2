@@ -2,7 +2,8 @@
 const express = require('express')
 const { 
     getAllUsers,
-    getSingleUser
+    getSingleUser,
+    followUser
 } = require('../controllers/userController')
 
 // NOTE: CREATING ROUTER
@@ -13,6 +14,9 @@ router.get('/all-users', getAllUsers)
 
 // NOTE: GET SINGLE USER ROUTE
 router.post('/single-user', getSingleUser)
+
+// NOTE: FOLLOW USER
+router.post('/follow', followUser)
 
 module.exports = router
 // END OF DOCUMENT --------------------------------------------------------------------------------

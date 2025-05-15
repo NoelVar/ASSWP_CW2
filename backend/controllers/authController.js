@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 
 // NOTE: VARIABLES
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // EMAIL FORMAT xxxx@xxxx.xxxx
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*])[A-Za-z\d!@#$%&*]{8,}$/;
 
 // TOKEN GENERATION
 const createToken = (_id) => {
@@ -81,16 +82,21 @@ const userRegister = async (req, res) => {
         return res.status(400).json({ message: "Email address is not valid." })
     }
 
-    // CHECKING IF USER IS ALREADY IN DB
-    const userExists = await userModel.findOne({ email })
-    if (userExists) {
-        return res.status(400).json({ message: "This email address is already registered." })
+    // TESTING PASSWORD STRENGTH
+    if (!passwordRegex.test(password)) {
+         return res.status(400).json({ message: "Password is not strong enough. Use atleast 8 characters with one number, uppercase, lowercase and special character." })
     }
     
     // CREATING BASE ROLE
     const role = 'user'
 
     try {
+        // CHECKING IF USER IS ALREADY IN DB
+        const userExists = await userModel.findOne({ email })
+        if (userExists) {
+            return res.status(400).json({ message: "This email address is already registered." })
+        }
+
         // GENERATING SALT
         const salt = await bcrypt.genSalt(10)
         // HASHING PASSWORD

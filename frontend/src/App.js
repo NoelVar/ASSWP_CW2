@@ -10,6 +10,10 @@ import ApiHub from './pages/ApiHub';
 import AdminKeyMgmt from './pages/AdminKeyMgmt';
 import { useEffect, useState } from 'react';
 import { useAuthContext } from './hooks/useAuthContext';
+import Posts from './pages/Posts';
+import OtherProfile from './pages/OtherProfile';
+import FollowingFeed from './pages/FollowingFeed';
+import UserProfile from './pages/UserProfile';
 
 
 // APP
@@ -59,16 +63,18 @@ function App() {
                 path='/'
                 element={<Home />}
               />
+              <Route
+                path='/posts'
+                element={<Posts />}
+              />
+              <Route 
+                path='/profile/:id'
+                element={<OtherProfile/>}
+              />
               { user &&
                 <Route
-                  path='/countries'
-                  element={<Countries />}
-                />
-              }
-              { user &&
-                <Route
-                  path='/api'
-                  element={<ApiHub />}
+                  path='/following-feed'
+                  element={<FollowingFeed />}
                 />
               }
               <Route
@@ -79,10 +85,10 @@ function App() {
                 path='/register'
                 element={<Register />}
               />
-              {role && role === 'admin' &&
+              { user &&
                 <Route
-                  path='/manage-keys'
-                  element={<AdminKeyMgmt />}
+                  path='/my-profile'
+                  element={<UserProfile />}
                 />
               }
               <Route

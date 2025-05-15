@@ -49,7 +49,7 @@ const Login = () => {
             setMessage("Login was successful!")
             // NAVIGATING TO COUNTRIES
             setTimeout(() => {
-                navigate('/countries')
+                navigate('/')
             }, 2000)
         } catch (error) {
             // CATHING ERRORS
@@ -78,8 +78,12 @@ const Login = () => {
                         placeholder="Enter your password..."
                     />
                 </div>
-                {error && <div className='auth-error'>{error}</div>}
-                {message && <div className='auth-message'>{message}</div>}
+                {message &&
+                <p className='pop-up-message'>{message}</p>
+                }
+                {error &&
+                    <p className='pop-up-error'>{error}</p>
+                }
                 <button onClick={loginAttempt}>Login</button>
                 <p>Doesn't have an account yet? Register <Link to='/register'>HERE</Link></p>
             </form>

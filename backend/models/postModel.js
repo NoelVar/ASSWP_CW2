@@ -4,34 +4,45 @@ const mongoose = require('mongoose')
 // NOTE: ESTABLISHING SCHEMA
 const Schema = mongoose.Schema
 
-const userSchema = new Schema({
-    username: {
+const postSchema = new Schema({
+    title: {
         type: String,
         require: true
     },
-    email: {
+    content: {
+        type: String,
+        require: true
+    },
+    date: {
+        type: Date,
+        require: true
+    },
+    country: {
         type: String,
         require: true,
-        unique: true
     },
-    password: {
-        type: String,
-        require: true
-    },
-    following: [{
+    comments: [{
+        poster: {
+            type: [mongoose.Types.ObjectId],
+            ref: 'userModel'
+        },
+        content: {
+            type: String,
+        }
+    }],
+    likes: [{
         type: [mongoose.Types.ObjectId],
         ref: 'userModel'
     }],
-    followers: [{
+    dislikes: [{
         type: [mongoose.Types.ObjectId],
         ref: 'userModel'
     }],
-    role: {
-        type: String,
-        enum: ['admin', 'user'],
-        require: true
+    poster: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'userModel'
     }
 }, {timestamps: true})
 
-module.exports = mongoose.model('userModel', userSchema)
+module.exports = mongoose.model('postModel', postSchema)
 // END OF DOCUMENT --------------------------------------------------------------------------------

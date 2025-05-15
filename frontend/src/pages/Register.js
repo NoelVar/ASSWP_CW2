@@ -50,7 +50,7 @@ const Register = () => {
             setMessage("Registering was successful!")
             // NAVIGATING USER ON SUCCESSION
             setTimeout(() => {
-                navigate('/countries')
+                navigate('/')
             }, 2000)
         } catch (error) {
             // HANDLING ERROR
@@ -95,8 +95,12 @@ const Register = () => {
                         placeholder="Enter password again..."
                     />
                 </div>
-                {error && <div className='auth-error'>{error}</div>}
-                {message && <div className='auth-message'>{message}</div>}
+                {message &&
+                <p className='pop-up-message'>{message}</p>
+                }
+                {error &&
+                    <p className='pop-up-error'>{error}</p>
+                }
                 <button onClick={registerAttempt}>Register</button>
                 <p>Already have an account? Login <Link to='/login'>HERE</Link></p>
             </form>
