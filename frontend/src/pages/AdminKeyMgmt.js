@@ -25,7 +25,7 @@ const AdminKeyMgmt = () => {
     useEffect(() => {
         const getAllKeys = async () => {
             try {
-                const response = await fetch('http://localhost:7000/api/get-all-keys', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/api/get-all-keys', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -63,7 +63,7 @@ const AdminKeyMgmt = () => {
 
         // ATTEMPTING TO REMOVE KEY
         try {
-            const response = await fetch('http://localhost:7000/api/delete-key', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/api/delete-key', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',

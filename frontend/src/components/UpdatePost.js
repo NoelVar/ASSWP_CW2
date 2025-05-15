@@ -38,7 +38,7 @@ const UpdatePost = ({selectedID}) => {
         // FETCHING POST THAT WAS SELECTED
         const getPost = async () => {
             try {
-                const response = await fetch('http://localhost:7000/post/single-post', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/single-post', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ const UpdatePost = ({selectedID}) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch('http://localhost:7000/post/update', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/post/update', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

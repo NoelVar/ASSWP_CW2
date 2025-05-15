@@ -34,7 +34,7 @@ const Home = () => {
         // FETCHING USER INFO
         const fetchUser = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/all-users')
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/all-users')
                 
                 const json = await response.json()
                 if (!response.ok) {

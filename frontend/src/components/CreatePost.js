@@ -44,7 +44,7 @@ const CreatePost = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch('http://localhost:7000/post/new-post', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/post/new-post', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

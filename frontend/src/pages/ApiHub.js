@@ -28,7 +28,7 @@ const ApiHub = () => {
         const getAllKeys = async () => {
             // ATTEMPTING TO GET ALL USER KEYS
             try {
-                const response = await fetch('http://localhost:7000/api/all-user-keys', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/api/all-user-keys', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const ApiHub = () => {
 
         // ATTEMPTING TO GENERATE KEY
         try {
-            const response = await fetch('http://localhost:7000/api/generate-key', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/api/generate-key', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ const ApiHub = () => {
 
         // ATTEMPTING TO ACTIVATE KEY
         try {
-            const response = await fetch('http://localhost:7000/api/activate-key', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/api/activate-key', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const ApiHub = () => {
         
         // ATTEMPTING TO DEACTIVATE KEYS
         try {
-            const response = await fetch('http://localhost:7000/api/deactivate-key', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/api/deactivate-key', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -186,7 +186,7 @@ const ApiHub = () => {
 
         // ATTEMPTING TO DELETE KEY
         try {
-            const response = await fetch('http://localhost:7000/api/delete-key', {
+            const response = await fetch('https://traveltales-backend.up.railway.app/api/delete-key', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',

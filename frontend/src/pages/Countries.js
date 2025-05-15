@@ -47,7 +47,7 @@ const Countries = () => {
         // FETCHING USER
         const fetchUser = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/single-user', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/single-user', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
