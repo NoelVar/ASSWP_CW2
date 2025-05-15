@@ -15,7 +15,7 @@ app.use(express.json())
 
 // CORS FOR FRONTEND
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://traveltales-cw2.netlify.app/"],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
 }))

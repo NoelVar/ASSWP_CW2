@@ -43,7 +43,7 @@ const OtherProfile = () => {
         // FETCHING SINGLE USER INFO
         const fetchUser = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/single-user',{
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/single-user',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ const OtherProfile = () => {
         // FETCHING USER'S POSTS
         const fetchUsersPosts = async () => {
             try {
-                const response = await fetch('http://localhost:7000/post/get-users-posts',{
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/get-users-posts',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -90,7 +90,7 @@ const OtherProfile = () => {
         // FETCHING ALL USERS
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/all-users')
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/all-users')
                 const json = await response.json()
 
                 if (!response.ok) {
@@ -116,7 +116,7 @@ const OtherProfile = () => {
         e.preventDefault()
         if (loggedInUser) {
             try {
-                const response = await fetch('http://localhost:7000/user/follow', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/follow', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

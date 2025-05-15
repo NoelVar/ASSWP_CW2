@@ -39,7 +39,7 @@ const Posts = () => {
         // FETCHING POST FROM USERS THAT ARE FOLLOWED
         const getPosts = async () => {
             try {
-                const response = await fetch('http://localhost:7000/post/all-posts')
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/all-posts')
         
                 // CHECKING RESPONSE
                 if (response.ok) {
@@ -79,7 +79,7 @@ const Posts = () => {
         // FETCHING USERS
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/all-users')
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/all-users')
                 const json = await response.json()
 
                 if (!response.ok) {
@@ -97,7 +97,7 @@ const Posts = () => {
         // FETCHING LOGGED IN USER INFORMATION
         const fetchLoggedInUser = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/single-user', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/single-user', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -130,7 +130,7 @@ const Posts = () => {
         e.preventDefault()
         if (user) {
             try {
-                const response = await fetch('http://localhost:7000/post/add-like/' + id, {
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/add-like/' + id, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ const Posts = () => {
         e.preventDefault()
         if (user) {
             try {
-                const response = await fetch('http://localhost:7000/post/add-dislike/' + id, {
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/add-dislike/' + id, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -217,7 +217,7 @@ const Posts = () => {
         e.preventDefault()
         try {
             if (user) {
-                const response = await fetch('http://localhost:7000/post/delete', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/delete', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -267,7 +267,7 @@ const Posts = () => {
         e.preventDefault()
         try {
             if (user) {
-                const response = await fetch('http://localhost:7000/post/add-comment', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/add-comment', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

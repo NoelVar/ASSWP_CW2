@@ -45,7 +45,7 @@ const UserProfile = () => {
         // FETCHING SINGLE USER INFO
         const fetchUser = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/single-user',{
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/single-user',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ const UserProfile = () => {
         // FETCHING USER'S POSTS
         const fetchUsersPosts = async () => {
             try {
-                const response = await fetch('http://localhost:7000/post/get-users-posts',{
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/get-users-posts',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ const UserProfile = () => {
         // FETCHING ALL USERS
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:7000/user/all-users')
+                const response = await fetch('https://traveltales-backend.up.railway.app/user/all-users')
                 const json = await response.json()
 
                 if (!response.ok) {
@@ -125,7 +125,7 @@ const UserProfile = () => {
         e.preventDefault()
         try {
             if (singleUser) {
-                const response = await fetch('http://localhost:7000/post/delete', {
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/delete', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',

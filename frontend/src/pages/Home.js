@@ -17,7 +17,7 @@ const Home = () => {
         // RETRIEVING POPULAR POSTS
         const getPosts = async () => {
             try {
-                const response = await fetch('http://localhost:7000/post/get-popular-posts')
+                const response = await fetch('https://traveltales-backend.up.railway.app/post/get-popular-posts')
         
                 // CHECKING RESPONSE
                 if (response.ok) {
